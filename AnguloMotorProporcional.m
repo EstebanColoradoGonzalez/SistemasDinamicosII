@@ -32,18 +32,18 @@ error(3)=0;
 error(4)=0;
 error(5)=0;
 
-K=400;
+K=1;
 
 AmplitudRele=50000;
 
 while (i<500)
   Referencia(i)=1;
 
-  u(i)=K*error(i);
+  u(i) = K * error(i);
 
-  SalidaSis(i)= Ts*error(i)+SalidaSis(i-1);
+  SalidaSis(i)= Ts*u(i)+SalidaSis(i-1);
 
-  error(i+1)= Referencia(i)-SalidaSis(i);
+  error(i+1)= Referencia(i) - SalidaSis(i);
 
   i=i+1;
 end
